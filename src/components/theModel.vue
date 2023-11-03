@@ -5,7 +5,7 @@
         {{ data?.sprites.front_default }}
         {{ data?.name }} {{ data?.weight }} {{ data?.height }}
         {{ data?.types[0]?.type?.name }}
-        {{ data?.types[1]?.type?.name }}
+       <!--  {{ data?.types[1]?.type?.name }} -->
         <v-btn @click="$emit('closeModal')">Close</v-btn>
       </v-card>
     </v-dialog>
