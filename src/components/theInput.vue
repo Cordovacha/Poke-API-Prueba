@@ -1,26 +1,51 @@
+<script setup>
+import { getSpecificPokemon } from "@/components/request/pokeApi";
+import { watch } from "vue";
+
+watch(async () => {
+  try {
+    data.value = await getSpecificPokemon();
+  } catch (error) {}
+});
+
+
+document.addEventListener('keyup', e=>{
+  
+if (e.target.matches('#poke')) {
+  document.querySelectorAll('.pokemonId').forEach(poke =>{
+    poke.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+    ?poke.classList.remove('filtro')
+    : poke.classList.add('filtro')
+  })
+  
+}
+
+
+
+  console.log(e.target.value);
+})
+
+/* async function searchPokemon() {
+  const searchedPokemon = searchInput.value.toLowerCase();
+
+  try {
+    const response = await fetch(URL + searchedPokemon);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(console.log(error));
+  }
+} */
+</script>
+
 <template>
-  <div class="text-field">
-    <div class="mid-place">
-      <v-text-field
-        :hide-details="'auto'"
-        class="debug"
-        variant="solo"
-        :label="'Search'"
-        @keyup="$emit('update:value', $event.target.value)"
-      />
-    </div>
+  <div>
+    <input
+      type="text"
+      autocomplete="off"
+      placeholder="Search Pokemon"
+      id="poke"
+      name="poke"
+    />
   </div>
 </template>
-
-<style scoped>
-.text-field {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #f9f9f9;
-}
-
-.mid-place {
-  width: 30%;
-}
-</style>

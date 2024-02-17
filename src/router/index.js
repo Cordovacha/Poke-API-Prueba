@@ -1,21 +1,25 @@
 // Composables
 import { createRouter, createWebHistory } from "vue-router";
-import  Home  from "@/views/theHome"
-import list from "@/views/theList ";
+import Home from "@/views/theHome";
+import List from "../views/theList.vue";
+import listFavorite from "@/views/listFavorite.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    // eslint-disable-next-line no-undef
     component: Home,
   },
   {
     path: "/theList",
     name: "theList",
-    // eslint-disable-next-line no-undef
-    component:list,
+    component: List,
   },
+  {
+  path: "/ListFavorite",
+  name: "listFavorite",
+  component: listFavorite,
+},
 ];
 
 const router = createRouter({

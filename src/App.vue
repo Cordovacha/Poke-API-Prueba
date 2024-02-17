@@ -1,5 +1,5 @@
 <template>
-  <router-view class="app"></router-view>
+  <router-view class="app "></router-view>
 </template>
 
 <style setup>
@@ -10,4 +10,5 @@
   background-color: #F9F9F9;
   min-height: 100vh;
 }
+
 </style>
