@@ -4,12 +4,6 @@ import { computed, ref, watchEffect } from "vue";
 
 const data = ref(null);
 
-const copy = document.getElementById('btn')
-
-const fil = computed((URL)=>{
-
-})
-
 const props = defineProps({
   dialog: {
     type: Boolean,
